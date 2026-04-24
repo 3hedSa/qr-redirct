@@ -1,11 +1,633 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=https://wa.me/966534102200" />
-  <title>Redirecting...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سدرة المسكن - شركة عقارية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: 
+                linear-gradient(135deg, rgba(37, 49, 13, 0.95) 0%, rgba(37, 49, 13, 0.9) 50%, rgba(45, 61, 20, 0.95) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="buildings" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><rect width="200" height="200" fill="%23f5f5f5" opacity="0.1"/><rect x="20" y="150" width="30" height="50" fill="%23e0e0e0" opacity="0.3"/><rect x="60" y="120" width="25" height="80" fill="%23e0e0e0" opacity="0.3"/><rect x="100" y="100" width="35" height="100" fill="%23e0e0e0" opacity="0.3"/><rect x="150" y="130" width="20" height="70" fill="%23e0e0e0" opacity="0.3"/></pattern></defs><rect width="1200" height="800" fill="url(%23buildings)"/></svg>');
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(37, 49, 13, 0.2) 0%, rgba(45, 61, 20, 0.2) 100%);
+            pointer-events: none;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 700px;
+            padding: 3rem;
+            background: 
+                linear-gradient(145deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #25310D, #2D3A0F, #3A4A1A, #4A5A2A);
+            border-radius: 27px;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .logo {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .logo-image {
+            width: 180px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #25310D 0%, #2D3A0F 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 
+                0 10px 30px rgba(37, 49, 13, 0.6),
+                0 0 0 4px rgba(255, 255, 255, 0.1);
+            position: relative;
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, #25310D, #2D3A0F, #3A4A1A);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.5;
+            animation: logoRotate 4s linear infinite;
+        }
+
+        .logo-icon i {
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .logo p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+            color: #E3F2FD;
+            font-weight: 500;
+        }
+
+        .logo .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 3rem;
+            color: #BBDEFB;
+            line-height: 1.6;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .cards-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #E3F2FD;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .link-card {
+            background: 
+                linear-gradient(145deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            min-height: 100px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .link-card:hover::before {
+            left: 100%;
+        }
+
+        .link-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: 
+                linear-gradient(145deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.15) 100%);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .link-card:active {
+            transform: translateY(-2px) scale(0.99);
+        }
+
+        .link-icon {
+            font-size: 2.8rem;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
+            flex-shrink: 0;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .link-icon::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .link-card:hover .link-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 
+                0 12px 30px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .link-content {
+            text-align: right;
+            flex: 1;
+        }
+
+        .link-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-description {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.5;
+            color: #E3F2FD;
+        }
+
+        .link-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.9rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(37, 49, 13, 0.9) 0%, rgba(58, 74, 26, 0.9) 100%);
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .link-card:hover .link-action {
+            transform: translateX(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-icon {
+            color: #25d366;
+            background: linear-gradient(135deg, rgba(37, 49, 13, 0.3) 0%, rgba(37, 49, 13, 0.2) 100%);
+        }
+
+        .whatsapp-icon::before {
+            background: linear-gradient(45deg, #25310D, #2D3A0F);
+        }
+
+        .project-icon {
+            color: #4A5A2A;
+            background: linear-gradient(135deg, rgba(37, 49, 13, 0.3) 0%, rgba(37, 49, 13, 0.2) 100%);
+        }
+
+        .project-icon::before {
+            background: linear-gradient(45deg, #25310D, #2D3A0F);
+        }
+
+        .company-icon {
+            color: #3A4A1A;
+            background: linear-gradient(135deg, rgba(37, 49, 13, 0.3) 0%, rgba(37, 49, 13, 0.2) 100%);
+        }
+
+        .company-icon::before {
+            background: linear-gradient(45deg, #25310D, #2D3A0F);
+        }
+
+        .person-icon {
+            color: #d5e7c4;
+            background: linear-gradient(135deg, rgba(37, 49, 13, 0.35) 0%, rgba(74, 90, 42, 0.28) 100%);
+        }
+
+        .person-icon::before {
+            background: linear-gradient(45deg, #25310D, #3A4A1A);
+        }
+
+        .link-card:hover .whatsapp-icon::before,
+        .link-card:hover .person-icon::before,
+        .link-card:hover .project-icon::before,
+        .link-card:hover .company-icon::before {
+            opacity: 0.3;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .logo h1 {
+                font-size: 2.5rem;
+            }
+
+            .link-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                padding: 1.35rem;
+            }
+
+            .link-content {
+                text-align: center;
+            }
+
+            .link-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 0.7rem;
+                padding: 1.15rem;
+                border-radius: 18px;
+            }
+
+            .logo h1 {
+                font-size: 2rem;
+            }
+
+            .logo p {
+                font-size: 1.05rem;
+            }
+
+            .cards-header {
+                font-size: 1.05rem;
+            }
+
+            .link-title {
+                font-size: 1.15rem;
+            }
+
+            .link-description {
+                font-size: 0.92rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes logoGlow {
+            from {
+                box-shadow: 
+                    0 10px 30px rgba(37, 49, 13, 0.6),
+                    0 0 0 4px rgba(255, 255, 255, 0.1);
+            }
+            to {
+                box-shadow: 
+                    0 15px 40px rgba(37, 49, 13, 0.8),
+                    0 0 0 6px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        @keyframes logoRotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .container {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .link-card {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .link-card:nth-child(1) {
+            animation-delay: 0.3s;
+            animation-fill-mode: both;
+        }
+
+        .link-card:nth-child(2) {
+            animation-delay: 0.5s;
+            animation-fill-mode: both;
+        }
+
+        .link-card:nth-child(3) {
+            animation-delay: 0.7s;
+            animation-fill-mode: both;
+        }
+
+        .link-card:nth-child(4) {
+            animation-delay: 0.9s;
+            animation-fill-mode: both;
+        }
+
+        .link-card:hover {
+            animation: pulse 0.6s ease-in-out;
+        }
+    </style>
 </head>
 <body>
-  <p>Redirecting you to the destination...</p>
+    <div class="container">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <h1>سدرة المسكن</h1>
+            <p>شركة سعودية، متخصصة في مجال التسويق العقاري</p>
+            <p class="subtitle">نقدم مشاريع فريدة تنسجم مع تطلعات المستقبل</p>
+        </div>
+
+        <div class="links-container">
+            <div class="cards-header">اختر أحد طرق الاتصال المناسبة </div>
+
+            <a href="https://wa.me/966500062224" class="link-card" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon person-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">الأستاذ عبدالجبار</div>
+                    <div class="link-description">للاستفسار ولمزيد من التفاصيل حول الوحدات المتاحة</div>
+                    <div class="link-action">تواصل الان <i class="fab fa-whatsapp"></i></div>
+                </div>
+            </a>
+
+            <a href="https://wa.me/966501420404" class="link-card" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon person-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">الأستاذ محمد</div>
+                    <div class="link-description">استشارة مباشرة حول المشروع</div>
+                    <div class="link-action">تواصل الأن<i class="fab fa-whatsapp"></i></div>
+                </div>
+            </a>
+
+            <a href="https://wa.me/966535299552" class="link-card" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon person-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">الأستاذ راكان</div>
+                    <div class="link-description">للاستفسار ولمزيد من التفاصيل حول الوحدات المتاحة</div>
+                    <div class="link-action">تواصل الأن<i class="fab fa-whatsapp"></i></div>
+                </div>
+            </a>
+
+            <a href="https://wa.me/966534102200?text=Hello,%20I%20would%20like%20to%20inquire%20about%20the%20project" class="link-card" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon whatsapp-icon">
+                    <i class="fas fa-city"></i>
+                </div>
+                <div class="link-content">
+                    <div class="link-title">شركة سدرة المسكن</div>
+                    <div class="link-description">الاستفسارات العامة ودعم العملاء</div>
+                    <div class="link-action">تواصل الأن <i class="fab fa-whatsapp"></i></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 سدرة المسكن. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced interactive effects
+        document.querySelectorAll('.link-card').forEach((card, index) => {
+            // Add ripple effect on click
+            card.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                `;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+            
+            // Add staggered animation on load
+            setTimeout(() => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            }, 100);
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add parallax effect to background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('body');
+            const speed = scrolled * 0.5;
+            parallax.style.backgroundPosition = `center ${speed}px`;
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 1s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
 </body>
 </html>
+
